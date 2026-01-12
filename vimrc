@@ -35,10 +35,10 @@ call plug#end()
 autocmd BufNewFile,BufRead *.tex set filetype=tex
 
 " Fixing bug where files opened with Vim remain in the history.
-if &term =~ "ansi"
-    let &t_ti = "\<Esc>[?47h"
-    let &t_te = "\<Esc>[?47l"
-endif
+" if &term =~ "ansi"
+"     let &t_ti = "\<Esc>[?47h"
+"     let &t_te = "\<Esc>[?47l"
+" endif
 
 " following systems dark/light mode
 "if strftime("%H") <= 21 && strftime("%H") >= 5
@@ -49,3 +49,8 @@ endif
 
 "let g:solarized_termcolors=256 "see line 2 for more information.
 colorscheme solarized8
+
+" Close Parathesis, Brachets, etc. automatically.
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
